@@ -1,0 +1,123 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+  flex-wrap: wrap;
+  padding: 50px 0px;
+}
+.container{
+  width: 90%;
+  max-width: 1200px;
+}
+.table{
+  border-collapse: collapse;
+  color: #32323d;
+  width: 100%;
+  border: 1px solid #d9d7ce;
+  min-width: 765px;
+}
+.table tr:nth-child(odd){
+  background: #F8F8F8;
+}
+.table td,
+.table th{
+  padding: 5px;
+  border: 1px solid #d9d7ce;
+}
+.table th{
+  background: #fff;
+  text-align: left;
+}
+.table th p{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.table th p i{
+  transform: rotateZ(90deg);
+  color: #CCC;
+}
+.container-new-city{
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  border: 1px solid #777;
+  border-radius: 6px;
+  margin-bottom: 25px;
+}
+.container-new-city input[type='text']{
+  padding: 5px;
+  font-size: 20px;
+  color: #121216;
+  outline: none;
+  width: 40%;
+}
+.container-new-city button{
+  border: 1px solid #121216;
+  background: #121216;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  width: 15%;
+  transition: all .8s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.container-new-city button:hover,
+.container-new-city button:focus{
+  background: #fff;
+  color: #121216;
+}
+.message{
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  width: 300px;
+  height: 60px;
+  border-radius: 6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  font-weight: bold;
+  display: none;
+}
+.message.message-success{
+  border: 5px solid #005200;
+  color: #fff;
+  background-color: #258d19;
+}
+.message.message-error{
+  border: 5px solid #c63637;
+  color: #fff;
+  background-color: #df4d49;
+}
+@media(max-width:875px){
+  .container{
+    overflow-x: scroll;
+  }
+  .container .table{
+    font-size: 14px;
+  }
+}
+@media(max-width: 767px){
+  .container-new-city{
+    flex-wrap: wrap;
+  }
+  .container-new-city input[type='text']{
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  .container-new-city button{
+    width: 100%;
+    padding: 5px;
+  } 
+}

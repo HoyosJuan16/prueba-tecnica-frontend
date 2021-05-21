@@ -1,0 +1,128 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Montserrat', sans-serif;
+}
+.container{
+  width: 90%;
+  max-width: 1200px;
+}
+.container-post{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-gap: 15px;  
+  height: 310px;
+  box-shadow: rgb(0 0 0 / 8%) 0px 2px 4px 0px;
+  border: 1px solid rgb(238, 238, 238);
+}
+.container-post .post-image .post-image-play{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 120px;
+  color: #121216;
+  height: 120px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  text-align: center;
+  font-size: 50px;
+  line-height: 120px;
+  transition: all .8s ease;
+}
+.container-post .post-image .post-image-play:hover{
+  background: #fff;
+  cursor: pointer;
+  color: rgb(18, 18, 22);
+}
+.container-post .post-image{
+  grid-column: span 4;
+  grid-row: span 2;
+  position: relative;
+}
+.container-post .post-image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+.container-post .post-text-title{
+  font-weight: bold;
+  color: #121216;
+  align-self: end;
+}
+.container-post .post-text-description{
+  color: #777;
+}
+.container-post .post-text-title,
+.container-post .post-text-description{
+  grid-column-start: 6;
+  grid-column-end: 12;
+}
+
+.modal{
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.85);
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: all .8s ease;
+  opacity: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+.close-modal{
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 36px;
+  text-align: center;
+  line-height: 50px;
+  background: #121216;
+  transition: all .8s ease;
+  cursor: pointer;
+}
+.close-modal:hover,
+.close-modal:focus{
+  background: #fff;
+  color: crimson;
+}
+
+@media(max-width:767px){
+  body{
+    padding: 50px 0px;
+  }
+  .container-post{
+    height: auto;
+    grid-template-rows: 308px repeat(2,1fr);
+  }
+  .container-post .post-image{
+    grid-column: span 12;
+    grid-row: span 1;
+  }
+  .container-post .post-text-title,
+  .container-post .post-text-description{
+    grid-column-start: 1;
+    grid-column-end: 13;
+    padding: 5px;
+  }
+  .modal video{
+    width: 90%;
+  }
+}
